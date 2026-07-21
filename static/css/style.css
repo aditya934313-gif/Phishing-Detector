@@ -1,0 +1,477 @@
+/* ==========================================================================
+   AI PHISHING DETECTION SYSTEM - X-TIER ULTIMATE CORE ENGINE
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* --- Base Body & Background Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #02050a;
+}
+
+body {
+    /* Layer 1: Premium Deep-Space Cyber Gradient Canvas */
+    background: 
+        radial-gradient(circle at 10% 15%, rgba(0, 212, 255, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 90% 85%, rgba(123, 97, 255, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #061124 0%, #030814 60%, #010307 100%);
+    
+    /* Layer 2: Vector Noise Grain Distortion Overlay */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+    
+    color: #f3f4f6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    cursor: auto; /* Retains your default operating system mouse cursor pointer */
+}
+
+/* Layer 3: Infinitely Crawling Technical Matrix Data Grid */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(0, 212, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation:
+        gridMove 40s linear infinite,
+        gridGlow 8s ease-in-out infinite alternate;
+    z-index: -2;
+}
+
+/* Layer 4: Shifting Aurora Plasma Energy Clouds */
+body::after {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.18), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(123, 97, 255, 0.22), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(0, 255, 255, 0.15), transparent 40%);
+    filter: blur(140px);
+    animation: auroraMove 30s ease-in-out infinite alternate;
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* --- Premium Kinetic Glass Cards --- */
+.glass-card {
+    background: rgba(8, 14, 28, 0.80) !important;
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.5s,
+        background 0.5s;
+}
+
+/* Liquid Neon Chroma Border Trail */
+.glass-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from var(--angle),
+        #00d4ff,
+        #7b61ff,
+        #00ffff,
+        #7b61ff,
+        #00d4ff
+    );
+    animation:
+        rotateBorder 6s linear infinite,
+        borderGlow 3s ease-in-out infinite alternate;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Holographic Ambient Sheen Overlay */
+.glass-card::after {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+    transform: rotate(20deg);
+    animation: holo 8s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 3D Dynamic Card Transform Hover */
+.glass-card:hover {
+    transform: translateY(-12px) rotateX(4deg) rotateY(-4deg) scale(1.03);
+    box-shadow:
+        0 25px 70px rgba(0, 212, 255, 0.3),
+        0 0 80px rgba(123, 97, 255, 0.25),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Real-time Scanner Radar Laser Line */
+#scan .glass-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        rgba(0, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transform: translateY(-120%);
+    animation: scanner 3.5s linear infinite;
+    mix-blend-mode: screen;
+    z-index: 4;
+}
+
+/* --- Atmospheric UI Extras --- */
+/* Floating Matrix Particles inside Cards */
+.glass-card span.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow:
+        0 0 15px cyan,
+        0 0 25px cyan;
+    animation: floatParticle 10s linear infinite;
+    z-index: 2;
+}
+
+/* Cybernetic Glowing Cursor Follower Ring */
+.cursor {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: cyan;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px cyan,
+        0 0 70px cyan;
+    transition: transform 0.1s;
+    z-index: 9999;
+}
+
+/* Typography Title Engine */
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    animation:
+        titleGlow 3s ease-in-out infinite alternate,
+        titleFloat 5s ease-in-out infinite;
+}
+
+nav {
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    background: rgba(2, 5, 10, 0.85);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #00d4ff, #00ffaa, #7b61ff, #00d4ff);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: auroraFlow 6s linear infinite;
+}
+
+/* --- Form Fields & Inputs --- */
+input {
+    background: rgba(2, 5, 10, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    transition: all 0.35s ease;
+}
+
+input:focus {
+    border-color: #00d4ff !important;
+    box-shadow: 
+        0 0 30px rgba(0, 212, 255, 0.25),
+        inset 0 0 15px rgba(0, 212, 255, 0.1) !important;
+    outline: none;
+}
+
+/* --- High Performance Tactical Buttons --- */
+button, .btn {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.35);
+}
+
+button:active, .btn:active {
+    transform: scale(0.97);
+}
+
+/* --- Emergency Breathing Phishing Threat Alerts --- */
+#result-area > div {
+    background: rgba(26, 12, 16, 0.9) !important;
+    border: 1px solid rgba(255, 74, 74, 0.2) !important;
+    position: relative;
+    animation: hazardBreathing 2.5s infinite ease-in-out alternate;
+}
+
+/* --- Core Keyframe Animations Infrastructure --- */
+@keyframes gridMove {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-60px, -60px, 0); }
+}
+
+@keyframes gridGlow {
+    from { opacity: 0.25; filter: blur(0.3px); }
+    to { opacity: 0.5; filter: blur(1px); }
+}
+
+@keyframes auroraMove {
+    0% { transform: translate(-5%, -5%) rotate(0deg); }
+    100% { transform: translate(6%, 6%) rotate(12deg); }
+}
+
+@keyframes rotateBorder {
+    to { --angle: 360deg; }
+}
+
+@keyframes borderGlow {
+    from { filter: blur(2px); }
+    to { filter: blur(5px); }
+}
+
+@keyframes scanner {
+    0% { transform: translateY(-120%); }
+    100% { transform: translateY(120%); }
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(80px) scale(0); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(-220px) scale(1.8); opacity: 0; }
+}
+
+@keyframes holo {
+    0% { transform: translateX(-100%) rotate(20deg); }
+    100% { transform: translateX(100%) rotate(20deg); }
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 10px cyan, 0 0 20px cyan; }
+    to { text-shadow: 0 0 25px cyan, 0 0 50px cyan, 0 0 90px #00ffff; }
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes auroraFlow {
+    to { background-position: 300% center; }
+}
+
+@keyframes hazardBreathing {
+    0% {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 74, 74, 0.1);
+        border-color: rgba(255, 74, 74, 0.2) !important;
+    }
+    100% {
+        box-shadow: 0 20px 60px rgba(255, 74, 74, 0.2), 0 0 30px rgba(255, 74, 74, 0.25);
+        border-color: rgba(255, 74, 74, 0.5) !important;
+    }
+}
+/* --- Base Body & Ultra-Premium Deep Background Setup --- */
+body {
+    /* Pure deep tactical matte background without muddying patterns */
+    background: #030712;
+    color: #f3f4f6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    cursor: auto;
+}
+
+/* Layer 1: Hyper-Focused High-Contrast Cyan Backlight Pools */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 50% 15%, rgba(0, 212, 255, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 20% 40%, rgba(123, 97, 255, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(0, 255, 255, 0.06) 0%, transparent 35%);
+    filter: blur(80px);
+    animation: auroraMove 20s ease-in-out infinite alternate;
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* Layer 2: Clean, Razor-Thin Moving Cyber Grid Mesh */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation:
+        gridMove 40s linear infinite,
+        gridGlow 6s ease-in-out infinite alternate;
+    z-index: -2;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 30%,rgba(0,255,255,.12),transparent 25%),
+    radial-gradient(circle at 80% 60%,rgba(0,150,255,.18),transparent 30%);
+
+    filter:blur(90px);
+
+    animation:aurora 15s ease-in-out infinite alternate;
+
+    pointer-events:none;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.animated-login{
+background:linear-gradient(
+135deg,
+#0f172a,
+#1e293b,
+#0f766e,
+#312e81,
+#0f172a
+);
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+}
+
+.glass-glow:hover{
+transform:translateY(-6px) scale(1.01);
+box-shadow:
+0 0 25px rgba(34,211,238,.25),
+0 0 60px rgba(34,211,238,.15);
+transition:.45s;
+}
+
+@keyframes aurora{
+
+from{
+transform:translate(-2%,-2%);
+}
+
+to{
+transform:translate(3%,3%);
+}
+
+}.particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:
+radial-gradient(circle,#9ffcff 2px,transparent 3px),
+radial-gradient(circle,#ffffff 1px,transparent 2px);
+
+background-size:220px 220px,160px 160px;
+
+animation:floatParticles 30s linear infinite;
+opacity:.7;
+}
+
+@keyframes floatParticles{
+
+from{
+background-position:0 0,0 0;
+}
+
+to{
+background-position:0 -500px,100px -700px;
+}
+
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: #f3f4f6;
+    
+    /* Locks the background image dynamically to the viewport window */
+    background-image: url("images/city.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    /* Permits the layout contents to scroll freely over the still image */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    position: relative;
+    cursor: auto;
+}
+
+/* Deep Cybernetic Vignette Overlay - Fixed still with the image */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        rgba(2, 5, 12, 0.4) 20%,
+        rgba(1, 3, 7, 0.85) 90%
+    );
+    pointer-events: none;
+    z-index: 0;
+}

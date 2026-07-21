@@ -1,0 +1,519 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#001f28",
+                        "primary-container": "#0a0f34",
+                        "inverse-primary": "#575c84",
+                        "surface-tint": "#bfc3f2",
+                        "on-tertiary": "#3c0090",
+                        "tertiary-container": "#190046",
+                        "outline-variant": "#46464e",
+                        "inverse-on-surface": "#2d3133",
+                        "secondary-fixed": "#b8eaff",
+                        "surface-variant": "#323537",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-surface-variant": "#c7c5cf",
+                        "on-secondary": "#003544",
+                        "primary-fixed-dim": "#bfc3f2",
+                        "on-primary-fixed-variant": "#3f446b",
+                        "on-primary": "#292d53",
+                        "on-surface": "#e0e3e5",
+                        "surface": "#101415",
+                        "inverse-surface": "#e0e3e5",
+                        "on-tertiary-container": "#8f5cff",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#777ba6",
+                        "on-tertiary-fixed-variant": "#5700c9",
+                        "secondary-fixed-dim": "#54d5ff",
+                        "outline": "#919099",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#272a2c",
+                        "surface-container-highest": "#323537",
+                        "primary-fixed": "#dfe0ff",
+                        "on-tertiary-fixed": "#23005b",
+                        "background": "#101415",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#363a3b",
+                        "primary": "#bfc3f2",
+                        "on-primary-fixed": "#13183d",
+                        "surface-container": "#1d2022",
+                        "surface-container-lowest": "#0b0f10",
+                        "surface-dim": "#101415",
+                        "surface-container-low": "#191c1e",
+                        "tertiary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#004d61",
+                        "secondary": "#a0e4ff",
+                        "secondary-container": "#00cefe",
+                        "tertiary": "#d1bcff",
+                        "on-background": "#e0e3e5",
+                        "on-secondary-container": "#005469"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-on-secondary-fixed min-h-screen flex flex-col">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>AI Phishing Detection System - Scanner Dashboard</title>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-on-secondary-fixed min-h-screen flex flex-col">
+
+<div id="main-site-view" class="flex flex-col flex-1">
+ <!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary/5 h-20">
+    <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+
+        <div class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">
+                shield
+            </span>
+            AI Phishing Detection System
+        </div>
+
+        <div class="hidden md:flex items-center gap-stack-md font-body-md text-body-md">
+            <a class="text-secondary font-bold border-b-2 border-secondary pb-1" href="#">
+                Home
+            </a>
+
+            <a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="#features">
+                Features
+            </a>
+
+            <a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="#how-it-works">
+                About
+            </a>
+
+            <a class="text-on-surface-variant hover:text-secondary transition-all duration-300" href="#contact">
+                Contact
+            </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+
+            <span
+                class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-colors"
+                onclick="toggleTeamModal(true)">
+                group
+            </span>
+
+            <!-- Sign Out Button -->
+            <button
+                type="button"
+                onclick="window.location.href='/'"
+                class="bg-surface-container border border-white/10 hover:bg-surface-container-high text-on-surface px-5 py-2 rounded-xl font-bold active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
+
+                <span>Sign Out</span>
+
+                <span class="material-symbols-outlined text-sm">
+                    logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+
+<main class="relative mt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-12">
+      <div class="relative z-10 max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-stack-lg items-center">
+        <div>
+          <h1 class="font-display-lg text-display-lg mb-stack-sm leading-tight">
+            Detect <span class="text-secondary">Phishing Websites</span> with AI
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-lg">
+            Empower your cybersecurity with our advanced Machine Learning models. We analyze thousands of website features in real-time to protect you from malicious intent.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a class="bg-secondary text-on-secondary-fixed px-8 py-3 rounded-xl font-bold flex items-center gap-2 glow-cyan hover:scale-105 transition-all" href="#scan">
+              Scan Website <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <div class="relative flex justify-center items-center">
+          <img alt="Cybersecurity Illustration" class="w-full max-w-md floating relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl9bo9Evh4BQ7Rvq_G2VtyxGzVERfBRGZM0KADOybIhXGaTm1qIcnPK67f9tIN6RR7A0_OTIqj-C091loriiDZwr4YojeIRvnMguCqRpDQ0WJNZZEekLUa4iZQHSEZcHN4YVKOt2LUF_qtyAvVSgoLOOiYvisftwm0O5Str3X7h2m1FPruEL1722sPCOwjMZa_vl1Q1xZ0mC_gYU4ku2nXuwBCSXyKBQCeD5UjQ4iU2a9ppvu_pPADevos-nJJjfWbWoEDI8gIrHA">
+          <div class="absolute w-[500px] h-[500px] bg-secondary/10 blur-[120px] rounded-full -z-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- URL Detection Section -->
+    <section class="relative overflow-hidden py-12" id="scan">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="glass-card p-8 md:p-12 rounded-[16px] max-w-3xl mx-auto">
+          <div class="text-center mb-stack-md">
+            <h2 class="font-headline-lg text-headline-lg mb-2">Instant Analysis</h2>
+            <p class="text-on-surface-variant font-body-md">Paste any URL below to run our neural network diagnostics.</p>
+          </div>
+
+          <form method="POST" action="/scan" id="scan-form" class="space-y-6">
+
+    <div class="relative group">
+
+        <div class="absolute inset-y-0 left-4 flex items-center text-on-surface-variant">
+            <span class="material-symbols-outlined">link</span>
+        </div>
+
+        <input
+            id="url-input"
+            name="url"
+            type="text"
+            required
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off"
+            placeholder="https://google.com"
+            value="{{ url if url else '' }}"
+            class="w-full bg-surface-container-low border border-white/10 rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all font-label-md">
+
+    </div>
+
+    <button
+        type="submit"
+        id="scan-btn"
+        class="w-full mt-stack-md bg-secondary text-on-secondary-fixed py-4 rounded-xl font-bold glow-cyan hover:opacity-90 active:scale-95 transition-all flex justify-center items-center gap-2">
+
+        <span>Analyze Website</span>
+
+        <span class="material-symbols-outlined">
+            search
+        </span>
+
+    </button>
+
+<!-- ================= VirusTotal Card ================= -->
+
+{% if vt_result %}
+
+<div class="mt-8 rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-xl shadow-2xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between border-b border-white/10 px-6 py-5">
+
+        <div class="flex items-center gap-4">
+
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/15">
+                <span class="material-symbols-outlined text-3xl text-blue-400">
+                    security
+                </span>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-white">
+                    VirusTotal Analysis
+                </h3>
+
+                <p class="text-sm text-gray-400">
+                    Scan results from multiple security engines
+                </p>
+            </div>
+
+        </div>
+
+        {% if "Malicious" in vt_result %}
+
+        <span class="rounded-full border border-red-500/30 bg-red-500/15 px-5 py-2 text-sm font-semibold text-red-400">
+            🚨 {{ vt_result }}
+        </span>
+
+        {% elif "Suspicious" in vt_result %}
+
+        <span class="rounded-full border border-yellow-500/30 bg-yellow-500/15 px-5 py-2 text-sm font-semibold text-yellow-400">
+            ⚠️ {{ vt_result }}
+        </span>
+
+        {% else %}
+
+        <span class="rounded-full border border-green-500/30 bg-green-500/15 px-5 py-2 text-sm font-semibold text-green-400">
+            ✅ {{ vt_result }}
+        </span>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <div class="grid grid-cols-2 gap-5 p-6 lg:grid-cols-4">
+
+        <!-- Malicious -->
+
+        <div class="rounded-xl border border-red-500/20 bg-red-500/10 p-5 text-center transition hover:scale-105">
+
+            <p class="text-sm uppercase tracking-wider text-red-300">
+                Malicious
+            </p>
+
+            <h2 class="mt-2 text-5xl font-extrabold text-red-400">
+                {{ malicious }}
+            </h2>
+
+        </div>
+
+        <!-- Suspicious -->
+
+        <div class="rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-5 text-center transition hover:scale-105">
+
+            <p class="text-sm uppercase tracking-wider text-yellow-300">
+                Suspicious
+            </p>
+
+            <h2 class="mt-2 text-5xl font-extrabold text-yellow-400">
+                {{ suspicious }}
+            </h2>
+
+        </div>
+
+        <!-- Harmless -->
+
+        <div class="rounded-xl border border-green-500/20 bg-green-500/10 p-5 text-center transition hover:scale-105">
+
+            <p class="text-sm uppercase tracking-wider text-green-300">
+                Harmless
+            </p>
+
+            <h2 class="mt-2 text-5xl font-extrabold text-green-400">
+                {{ harmless }}
+            </h2>
+
+        </div>
+
+        <!-- Verdict -->
+
+        <div class="rounded-xl border border-cyan-500/20 bg-cyan-500/10 p-5 text-center transition hover:scale-105">
+
+            <p class="text-sm uppercase tracking-wider text-cyan-300">
+                Verdict
+            </p>
+
+            <h2 class="mt-2 text-xl font-bold text-cyan-300">
+                {{ vt_result }}
+            </h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+          </form>
+        </div>
+      </div>
+
+    <!-- Features Section -->
+    <section class="bg-surface-container-lowest py-12" id="features">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-stack-lg">
+          <span class="font-label-md text-secondary uppercase tracking-[0.2em] mb-4 block">Core Capabilities</span>
+          <h2 class="font-headline-lg text-headline-lg">Advanced Detection Architecture</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-stack-md">
+          <div class="glass-card p-8 rounded-[16px] hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-300">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 border border-primary/20"><span class="material-symbols-outlined text-primary">security</span></div>
+            <h3 class="font-headline-md text-headline-md mb-4">Secure Detection</h3>
+            <p class="text-on-surface-variant">Proprietary algorithms that analyze SSL certificates, DNS records, and domain aging to ensure absolute legitimacy.</p>
+          </div>
+          <div class="glass-card p-8 rounded-[16px] hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-300">
+            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 border border-secondary/20"><span class="material-symbols-outlined text-secondary">bolt</span></div>
+            <h3 class="font-headline-md text-headline-md mb-4">Fast Prediction</h3>
+            <p class="text-on-surface-variant">Parallel processing architecture allows for sub-second analysis of complex DOM structures and script behaviors.</p>
+          </div>
+          <div class="glass-card p-8 rounded-[16px] hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-300">
+            <div class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center mb-6 border border-tertiary/20"><span class="material-symbols-outlined text-tertiary">check_circle</span></div>
+            <h3 class="font-headline-md text-headline-md mb-4">High Accuracy</h3>
+            <p class="text-on-surface-variant">Trained on over 1.2 million verified datasets, achieving a 99.4% precision rate in identifying zero-day phishing attacks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="relative overflow-hidden py-12" id="how-it-works">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-stack-lg">
+          <h2 class="font-headline-lg text-headline-lg">How It Works</h2>
+          <p class="text-on-surface-variant mt-2">Transparent process from URL input to threat assessment.</p>
+        </div>
+        <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="flex flex-col items-center text-center relative">
+            <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center mb-6 z-10 border-secondary/30 border-2"><span class="font-display-lg text-2xl text-secondary">01</span></div>
+            <h4 class="font-bold mb-2">Ingestion</h4>
+            <p class="text-sm text-on-surface-variant">URL is crawled and raw metadata is extracted from headers.</p>
+          </div>
+          <div class="flex flex-col items-center text-center relative">
+            <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center mb-6 z-10 border-primary/30 border-2"><span class="font-display-lg text-2xl text-primary">02</span></div>
+            <h4 class="font-bold mb-2">Tokenization</h4>
+            <p class="text-sm text-on-surface-variant">Natural Language Processing parses site content and links.</p>
+          </div>
+          <div class="flex flex-col items-center text-center relative">
+            <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center mb-6 z-10 border-tertiary/30 border-2"><span class="font-display-lg text-2xl text-tertiary">03</span></div>
+            <h4 class="font-bold mb-2">Model Inference</h4>
+            <p class="text-sm text-on-surface-variant">Deep Learning models evaluate features against historical data.</p>
+          </div>
+          <div class="flex flex-col items-center text-center relative">
+            <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center mb-6 z-10 border-error/30 border-2"><span class="font-display-lg text-2xl text-error">04</span></div>
+            <h4 class="font-bold mb-2">Classification</h4>
+            <p class="text-sm text-on-surface-variant">Final risk assessment and recommendation is generated.</p>
+          </div>
+          <div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-secondary/50 via-primary/50 to-error/50 -z-0"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-surface-container-low py-12">
+      <div class="max-w-container-max mx-auto px-gutter grid lg:grid-cols-2 gap-stack-lg items-center">
+        <div class="order-2 lg:order-1">
+          <div class="glass-card p-1 aspect-square rounded-2xl overflow-hidden">
+            <div class="w-full h-full rounded-xl relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAA0ChKH198gazb343masxAJQRSP36rf2edz93HEUGFkeA8qejS1m4nT3IJL-H1Ccs0HOFqxdQ9uYu82vnlfLuuUVxozJPL2kQMa4PenWkZPUDEU3FqJuDeuwWHxpRc-EjEvr0VIfGesloPGVDhTJfGA2dmFrLLkFXtOtHbizDX050LuriihvblmX3khRkYW7tUUcqX78paq38gINuWI-D8UTmCH0qEnSlWb-_S_aZ6qHhHq5pOPXYGdskfvbdjCorbN52b4G_pis'); background-size: cover;"></div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <span class="font-label-md text-primary uppercase tracking-widest mb-4 block">Academic Excellence</span>
+          <h2 class="font-headline-lg text-headline-lg mb-stack-sm">Machine Learning</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">Machine Learning empowers our system to automatically learn and improve from data, identifying complex phishing patterns that traditional algorithms might miss.</p>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-8">By focusing on lexical features, host-based indicators, and visual forensics, we provide a holistic security layer that adapts to the ever-evolving tactics of modern cyber-criminals.</p>
+          <div class="flex items-center gap-6">
+            <div class="flex flex-col"><span class="text-secondary font-display-lg text-3xl">99.4%</span><span class="text-on-surface-variant font-label-sm">Precision</span></div>
+            <div class="w-[1px] h-12 bg-white/10"></div>
+            <div class="flex flex-col"><span class="text-primary font-display-lg text-3xl">0.02s</span><span class="text-on-surface-variant font-label-sm">Inference</span></div>
+            <div class="w-[1px] h-12 bg-white/10"></div>
+            <div class="flex flex-col"><span class="text-tertiary font-display-lg text-3xl">1.2M</span><span class="text-on-surface-variant font-label-sm">Datasets</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="relative overflow-hidden py-12 bg-surface-container-lowest" id="contact">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-stack-lg">
+          <span class="font-label-md text-secondary uppercase tracking-[0.2em] mb-4 block">Get In Touch</span>
+          <h2 class="font-headline-lg text-headline-lg">Contact Us</h2>
+          <p class="text-on-surface-variant mt-2">Reach out directly for support, inquiries, or research feedback.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-stack-md max-w-3xl mx-auto">
+          <a href="tel:+919131966684" class="glass-card p-8 rounded-[16px] border border-white/5 hover:border-secondary/30 hover:-translate-y-1 transition-all duration-300 flex items-center gap-6 group">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center border border-secondary/20 group-hover:bg-secondary/20 transition-colors"><span class="material-symbols-outlined text-secondary">call</span></div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">Phone Number</h4>
+              <p class="text-on-surface font-label-md group-hover:text-secondary transition-colors">+91 9131966684</p>
+            </div>
+          </a>
+          <a href="mailto:akshya1323@gmail.com" class="glass-card p-8 rounded-[16px] border border-white/5 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 flex items-center gap-6 group">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-colors"><span class="material-symbols-outlined text-primary">mail</span></div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">Email Support</h4>
+              <p class="text-on-surface font-label-md group-hover:text-primary transition-colors">akshya1323@gmail.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Team Members Modal Layout -->
+  <div id="team-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4">
+    <div class="glass-card max-w-2xl w-full p-8 rounded-[24px] border border-white/10 bg-surface-container shadow-2xl relative">
+      <button onclick="toggleTeamModal(false)" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/5 border border-white/10 text-on-surface-variant hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors">
+        <span class="material-symbols-outlined text-lg">close</span>
+      </button>
+      <h3 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-2 border-b border-white/5 pb-4">
+        <span class="material-symbols-outlined">group</span> Team Development Members
+      </h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-surface-container-low/60 p-4 rounded-xl border border-white/5 hover:border-secondary/20 transition-all">
+          <p class="font-bold text-white mb-1 text-sm">1. Paramvir Singh Saini</p>
+          <a href="mailto:paramvir.singhsainiai24@ssipmt.com" class="text-xs text-secondary hover:underline break-all block font-medium">paramvir.singhsainiai24@ssipmt.com</a>
+        </div>
+        <div class="bg-surface-container-low/60 p-4 rounded-xl border border-white/5 hover:border-secondary/20 transition-all">
+          <p class="font-bold text-white mb-1 text-sm">2. Aditya Singh</p>
+          <a href="mailto:aditya.singhcseai24@ssipmt.com" class="text-xs text-secondary hover:underline break-all block font-medium">aditya.singhcseai24@ssipmt.com</a>
+        </div>
+        <div class="bg-surface-container-low/60 p-4 rounded-xl border border-white/5 hover:border-secondary/20 transition-all">
+          <p class="font-bold text-white mb-1 text-sm">3. Abhinav Singh Kashyap</p>
+          <a href="mailto:abhinav.singhkashyapcseai24@gmail.com" class="text-xs text-secondary hover:underline break-all block font-medium">abhinav.singhkashyapcseai24@gmail.com</a>
+        </div>
+        <div class="bg-surface-container-low/60 p-4 rounded-xl border border-white/5 hover:border-secondary/20 transition-all">
+          <p class="font-bold text-white mb-1 text-sm">4. Vishwesh Tiwari</p>
+          <a href="mailto:akshya1323@gmail.com" class="text-xs text-secondary hover:underline break-all block font-medium">akshya1323@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="mt-16 border-t border-white/10 pt-8 pb-12">
+    <div class="max-w-container-max mx-auto px-6 grid md:grid-cols-2 gap-8">
+        <div>
+            <h4 class="text-lg font-semibold text-white mb-2">SSIPMT, Raipur</h4>
+            <p class="text-sm text-on-surface-variant max-w-sm">Department of Computer Science & Artificial Intelligence. This platform is dedicated to real-time AI-driven phishing detection and academic research.</p>
+        </div>
+        <div class="flex flex-col md:items-end">
+            <h4 class="text-lg font-semibold text-white mb-2">Support & Documentation</h4>
+            <a href="mailto:support@ssipmt.com" class="text-secondary hover:underline text-sm font-medium flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> contact-support@ssipmt.com</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+  function toggleTeamModal(show) {
+    const modal = document.getElementById('team-modal');
+    if (show) modal.classList.remove('hidden');
+    else modal.classList.add('hidden');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>AI Phishing Detection System - Login</title>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-on-secondary-fixed min-h-screen flex flex-col">
+
+<div class="matrix-grid-mesh"></div>
+<!-- AUTH SUB-SYSTEM (First state seen by user) -->
+<div id="auth-view" class="flex-1 flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  <div class="absolute w-[500px] h-[500px] bg-secondary/5 blur-[120px] rounded-full top-1/4 -z-10"></div>
+  
+  <div class="w-full max-w-md space-y-8">
+    <div class="text-center">
+      <span class="material-symbols-outlined text-primary text-5xl mb-2" style="font-variation-settings: 'FILL' 1;">shield</span>
+      <h2 class="text-center text-3xl font-bold font-headline-lg tracking-tight text-on-surface">AI Phishing Detection System</h2>
+      <p id="auth-subtitle" class="mt-2 text-center text-sm text-on-surface-variant">Sign in to access your secure diagnostics interface</p>
+    </div>
+
+<!-- Login Box -->
+<div id="login-box"
+     class="mt-8 w-full max-w-md mx-auto rounded-2xl border border-white/10 bg-surface-container/80 backdrop-blur-xl shadow-2xl overflow-hidden">
+
+    <form id="login-form"
+          method="POST"
+          action="/"
+          class="p-8 flex flex-col gap-5">
+
+        <!-- Email -->
+        <div>
+            <label for="login-email"
+                   class="mb-2 block text-sm font-medium text-on-surface-variant">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="login-email"
+                name="email"
+                required
+                placeholder="name@ssipmt.com"
+                class="w-full rounded-xl border border-white/10 bg-surface-container-low px-4 py-3 text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition">
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label for="login-password"
+                   class="mb-2 block text-sm font-medium text-on-surface-variant">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="login-password"
+                name="password"
+                required
+                placeholder="••••••••"
+                class="w-full rounded-xl border border-white/10 bg-surface-container-low px-4 py-3 text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition">
+        </div>
+
+        <!-- Login Button -->
+        <button
+            type="submit"
+            class="w-full rounded-xl bg-secondary py-3.5 text-sm font-bold text-on-secondary-fixed shadow-lg shadow-secondary/20 hover:opacity-90 active:scale-95 transition">
+            Log In
+        </button>
+
+        <!-- Divider -->
+        <div class="relative flex items-center justify-center py-2">
+            <div class="absolute left-0 right-0 h-px bg-white/10"></div>
+
+            <span class="relative bg-surface-container px-4 text-xs text-on-surface-variant">
+                Log in with social
+            </span>
+        </div>
+
+        <!-- Facebook -->
+<button
+    type="button"
+    id="fb-bypass-btn"
+    onclick="window.location.href='/scan'"
+    class="w-full flex items-center justify-center gap-2 rounded-xl bg-[#1877F2] py-3 font-semibold text-white hover:opacity-90 active:scale-95 transition">
+
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.009 10.125 11.927v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.313 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.082 24 18.092 24 12.073z"/>
+    </svg>
+
+    Continue with Facebook
+</button>
+
+<!-- Google -->
+<button
+    type="button"
+    id="google-bypass-btn"
+    onclick="window.location.href='/scan'"
+    class="w-full flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white py-3 font-semibold text-gray-800 hover:bg-gray-100 active:scale-95 transition">
+
+    <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.7449 12.27C23.7449 11.48 23.6749 10.73 23.5549 10H12.2549V14.51H18.7249C18.4349 15.99 17.5849 17.24 16.3249 18.09V21.09H20.1849C22.4449 19 23.7449 15.92 23.7449 12.27Z" fill="#4285F4"/>
+        <path d="M12.2549 24C15.4949 24 18.2049 22.92 20.1849 21.09L16.3249 18.09C15.2449 18.81 13.8749 19.25 12.2549 19.25C9.12492 19.25 6.47492 17.14 5.52492 14.29H1.54492V17.38C3.51492 21.3 7.56492 24 12.2549 24Z" fill="#34A853"/>
+        <path d="M5.52488 14.29C5.27488 13.57 5.14488 12.8 5.14488 12C5.14488 11.2 5.28488 10.43 5.52488 9.71V6.62H1.54488C0.724882 8.24 0.254883 10.06 0.254883 12C0.254883 13.94 0.724882 15.76 1.54488 17.38L5.52488 14.29Z" fill="#FBBC05"/>
+        <path d="M12.2549 4.75C14.0249 4.75 15.6049 5.36 16.8549 6.55L20.2749 3.13C18.2049 1.19 15.4949 0 12.2549 0C7.56492 0 3.51492 2.7 1.54492 6.62L5.52492 9.71C6.47492 6.86 9.12492 4.75 12.2549 4.75Z" fill="#EA4335"/>
+    </svg>
+
+    Continue with Google
+</button>
+    </form>
+
+    <!-- Register Footer -->
+    <div class="border-t border-white/10 bg-surface-container-high p-5 text-center">
+
+        <p class="text-sm text-on-surface-variant">
+            Don't have an account?
+
+            <button
+                type="button"
+                onclick="toggleAuthMode('signup')"
+                class="ml-1 font-semibold text-secondary hover:underline">
+                Register
+            </button>
+        </p>
+
+    </div>
+
+</div>
+    <!-- Signup Box -->
+    <div id="signup-box" class="mt-8 rounded-2xl border border-white/10 bg-surface-container shadow-2xl overflow-hidden hidden">
+      <form id="signup-form" method="POST" action="/login" class="p-6 md:p-8 flex flex-col gap-4">
+        <div>
+          <label for="signup-name" class="mb-2 inline-block text-sm text-on-surface-variant font-medium">Full Name</label>
+          <input type="text" id="signup-name" required class="w-full rounded-xl border border-white/10 bg-surface-container-low px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition duration-200" placeholder="John Doe" />
+        </div>
+        <div>
+          <label for="signup-email" class="mb-2 inline-block text-sm text-on-surface-variant font-medium">Email Address</label>
+          <input type="email" id="signup-email" required class="w-full rounded-xl border border-white/10 bg-surface-container-low px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition duration-200" placeholder="name@ssipmt.com" />
+        </div>
+        <div>
+          <label for="signup-password" class="mb-2 inline-block text-sm text-on-surface-variant font-medium">Create Password</label>
+          <input type="password" id="signup-password" required class="w-full rounded-xl border border-white/10 bg-surface-container-low px-4 py-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition duration-200" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="block cursor-pointer rounded-xl bg-primary px-8 py-3.5 text-center text-sm font-bold text-on-primary-fixed shadow-lg shadow-primary/10 hover:opacity-90 active:scale-[0.98] transition duration-200 w-full md:text-base">Create Account</button>
+      </form>
+      <div class="flex items-center justify-center bg-surface-container-high p-4 border-t border-white/5">
+        <p class="text-center text-sm text-on-surface-variant">Already have an account? <button type="button" onclick="toggleAuthMode('login')" class="text-secondary font-medium transition duration-100 hover:underline">Log in</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleAuthMode(mode) {
+    const loginBox = document.getElementById('login-box');
+    const signupBox = document.getElementById('signup-box');
+    const subtitle = document.getElementById('auth-subtitle');
+    if (mode === 'signup') {
+      loginBox.classList.add('hidden');
+      signupBox.classList.remove('hidden');
+      subtitle.textContent = 'Create an account to register with the platform';
+    } else {
+      signupBox.classList.add('hidden');
+      loginBox.classList.remove('hidden');
+      subtitle.textContent = 'Sign in to access your secure diagnostics interface';
+    }
+  }
+</script>
+</body>
+</html>
